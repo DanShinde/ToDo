@@ -1,4 +1,12 @@
 **/venv/
 **.sqlite3
 # Local Netlify folder
-!/build
+!/build/
+# ignore all logs
+*.log
+**/static_temp/
+/website/myapp.log
+*.pyc
+**/__pycache__/
+**/migrations/
+# Testing
