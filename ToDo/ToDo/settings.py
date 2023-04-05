@@ -148,6 +148,7 @@ REST_FRAMEWORK = {
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://danstodo.onrender.com",
 ]
 
 #SimpleJWT Authentication settings
