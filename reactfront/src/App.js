@@ -10,7 +10,7 @@ function App() {
 
   const getData = async () =>{
     try {
-      const response = await axios.get('http://localhost:8000/')
+      const response = await axios.get('https://reacttodo.pythonanywhere.com/')           //('http://localhost:8000/')
       const json = await response.data
       setTasks(json)
     } catch (err) {

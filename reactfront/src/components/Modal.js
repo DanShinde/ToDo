@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState } from "react";
+import axios from 'axios';
 
 const Modal = ({mode, setShowModal, task})=> {
+
+
     const editMode = mode === 'edit' ? true : false
 
     const [data, setData] = useState({
@@ -10,19 +13,19 @@ const Modal = ({mode, setShowModal, task})=> {
     })
 
     const postData = async (e) => {
-        e.prevent_Default()
+        e.preventDefault()        
         try {
-            const response = await fetch('http://localhost:8000/todo/', {
-                method: "POST",
+            await axios.post(`http://localhost:8000/todo/`, data, {
                 headers: {'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
             })
-            console.log(response)
-        } catch(err) {
+            // Refresh tasks list after creation or update
+            setShowModal(false)
+            window.location.reload(false)
+        } catch (err) {
             console.error(err)
         }
     }
-
+    
 
     const handleChange= (e)=> {
         const {name, value} = e.target

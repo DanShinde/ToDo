@@ -29,6 +29,7 @@ SECRET_KEY = 'django-insecure-42vnd=dx4$&(568ya*cqr)un!taa(m_2s7s)6x8jdm)*lqtz#f
 DEBUG = True
 
 ALLOWED_HOSTS = ['reacttodo.pythonanywhere.com',
+                 'localhost',
                  ]
 
 
@@ -116,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
