@@ -1,9 +1,27 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework.views import APIView
 from .serializers import LoginSerializer
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_exempt
+
+
+@csrf_exempt
+def git_update(request):
+    if request.method != "POST":
+        return HttpResponse("Couldn't update the code on PythonAnywhere")
+    '''
+        pass the path of the diectory where your project will be 
+        stored on PythonAnywhere in the git.Repo() as parameter.
+        Here the name of my directory is "test.pythonanywhere.com"
+        '''
+    repo = git.Repo('/home/iol/IOL')
+    origin = repo.remotes.origin
+    origin.pull()
+    return HttpResponse("Updated code on PythonAnywhere")
+
 
 class LoginAPI(APIView):
 

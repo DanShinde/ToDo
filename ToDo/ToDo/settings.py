@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-42vnd=dx4$&(568ya*cqr)un!taa(m_2s7s)6x8jdm)*lqtz#f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['reacttodo.pythonanywhere.com',
+                 ]
 
 
 # Application definition
